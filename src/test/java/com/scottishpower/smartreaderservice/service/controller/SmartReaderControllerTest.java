@@ -17,14 +17,13 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class SmartReaderControllerTest {
+    private static final Integer ACCOUNT_NUMBER = 234;
     @Mock
     SmartReadRepository smartReadRepository;
-
     @Mock
     SmartReadService smartReadService;
     @InjectMocks
     private SmartReaderController testee;
-    private static final Integer ACCOUNT_NUMBER = 234;
 
     @Test
     @DisplayName("Get Smart Read successfully returns data for given account number")

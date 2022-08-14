@@ -17,21 +17,21 @@ import java.util.List;
 @SpringBootApplication
 public class Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
-	//TODO remove me
-	@Bean
-	public CommandLineRunner initiateSmartReadCase(SmartReadRepository repository) {
-		return (args) -> {
-			// save a smartReadCase to demo
-			var gasReading = GasReading.builder().meterId(1L).reading(13L).date(ZonedDateTime.parse("2018-03-23T15:00:00Z")).build();
-			List<GasReading> gasReadingList= List.of(gasReading);
-			var elecReading = ElecReading.builder().meterId(1L).reading(13L).date(ZonedDateTime.parse("2018-03-23T15:00:00Z")).build();
-			List<ElecReading> elecReadingList= List.of(elecReading);
-			repository.save(new SmartReadCase(1L ,gasReadingList, elecReadingList));
-		};
-	}
+    //TODO remove me
+    @Bean
+    public CommandLineRunner initiateSmartReadCase(SmartReadRepository repository) {
+        return (args) -> {
+            // save a smartReadCase to demo
+            var gasReading = GasReading.builder().meterId(1L).reading(13L).date(ZonedDateTime.parse("2018-03-23T15:00:00Z")).build();
+            List<GasReading> gasReadingList = List.of(gasReading);
+            var elecReading = ElecReading.builder().meterId(1L).reading(13L).date(ZonedDateTime.parse("2018-03-23T15:00:00Z")).build();
+            List<ElecReading> elecReadingList = List.of(elecReading);
+            repository.save(new SmartReadCase(1L, gasReadingList, elecReadingList));
+        };
+    }
 
 }

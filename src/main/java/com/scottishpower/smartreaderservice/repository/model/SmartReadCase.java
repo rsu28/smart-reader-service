@@ -18,7 +18,7 @@ public class SmartReadCase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="ID")
+    @Column(name = "ID")
     private Long accountId;
 
     @OneToMany(cascade = {CascadeType.ALL})

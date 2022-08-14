@@ -14,20 +14,20 @@ import java.time.ZonedDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="TBL_ELECREADING")
+@Table(name = "TBL_ELECREADING")
 public class ElecReading {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="ID")
+    @Column(name = "ID")
     private Long id;
 
-    @Column(name="METERID")
+    @Column(name = "METERID")
     private Long meterId;
 
-    @Column(name="READ")
+    @Column(name = "READ")
     private Long reading;
 
-    @Column(name="DATE")
+    @Column(name = "DATE")
     private ZonedDateTime date;
 }
